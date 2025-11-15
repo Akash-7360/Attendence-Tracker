@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Dashboard — Cyber Club</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="neon-bg">
+  <div class="bubble" style="width:180px;height:180px;left:10%;animation-delay:0s;"></div>
+  <div class="bubble" style="width:120px;height:120px;left:30%;animation-delay:3s;"></div>
+  <div class="bubble" style="width:250px;height:250px;left:60%;animation-delay:6s;"></div>
+  <div class="bubble" style="width:90px;height:90px;left:80%;animation-delay:1s;"></div>
+  <div class="bubble" style="width:160px;height:160px;left:50%;animation-delay:9s;"></div>
+</div>
+
+  <div class="admin-wrap">
+    <header class="topbar">
+      <h1>Cyber Club — Admin</h1>
+      <div class="right">
+        <button id="exportBtn" class="btn">Export CSV</button>
+        <button id="logoutBtn" class="btn danger">Logout</button>
+      </div>
+    </header>
+    <main class="grid">
+      <section class="panel" id="studentsPanel"></section>
+      <section class="panel" id="eventsPanel"></section>
+      <section class="panel" id="attendancePanel"></section>
+      <section class="panel" id="analyticsPanel"></section>
+    </main>
+  </div>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="events.js"></script>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

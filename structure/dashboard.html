@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Dashboard — Cyber Club</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="neon-bg">
+  <div class="bubble" style="width:180px;height:180px;left:10%;animation-delay:0s;"></div>
+  <div class="bubble" style="width:120px;height:120px;left:30%;animation-delay:3s;"></div>
+  <div class="bubble" style="width:250px;height:250px;left:60%;animation-delay:6s;"></div>
+  <div class="bubble" style="width:90px;height:90px;left:80%;animation-delay:1s;"></div>
+  <div class="bubble" style="width:160px;height:160px;left:50%;animation-delay:9s;"></div>
+</div>
+
+  <div class="dash-container">
+    <aside class="sidebar">
+      <div class="profile compact">
+        <img id="profilePic" src="images/placeholder-profile.avif" alt="profile" />
+        <div>
+          <h3 id="profileName">Student</h3>
+          <p id="profileEmail">email@example.com</p>
+        </div>
+      </div>
+      <nav>
+        <button id="btnMark" class="side-btn">Mark Attendance</button>
+        <button id="btnHistory" class="side-btn">Attendance History</button>
+        <button id="btnProfile" class="side-btn">Profile</button>
+        <button id="btnEdit" class="side-btn">Edit Profile</button>
+        <button id="btnLogout" class="side-btn danger">Logout</button>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <section id="currentEvent" class="card"></section>
+      <section id="pageContent" class="card"></section>
+    </main>
+  </div>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="attendance.js"></script>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+/* ===========================
+   GLOBAL STYLES
+   =========================== */
+body {
+    margin: 0; /* Remove default browser margin */
+    background: #04060b; /* Dark background */
+    color: #e8f7ff; /* Light text color */
+    font-family: Inter; /* Apply Inter font */
+}
+
+/* ===========================
+   TOP BAR (HEADER)
+   =========================== */
+.topbar {
+    display: flex; /* Place children in a row */
+    justify-content: space-between; /* Space between heading & buttons */
+    align-items: center; /* Vertically center elements */
+    padding: 16px; /* Inner spacing */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03); /* Subtle border */
+}
+
+.topbar h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 18px; /* Title size */
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+.btn {
+    padding: 8px 12px; /* Button size */
+    border-radius: 8px; /* Rounded corners */
+    border: none; /* Remove default border */
+    background: linear-gradient(90deg, #00f0ff, #8a2be2); /* Gradient background */
+    color: #041018; /* Text color */
+    cursor: pointer; /* Pointer cursor */
+    margin-left: 8px; /* Spacing between buttons */
+}
+
+/* Variant: Danger / Secondary button */
+.btn.danger {
+    background: transparent; /* Transparent background */
+    color: #ff9b9b; /* Danger color */
+    border: 1px solid rgba(255, 255, 255, 0.04); /* Light border */
+}
+
+/* ===========================
+   GRID LAYOUT
+   =========================== */
+.grid {
+    display: grid; /* Enable CSS grid layout */
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    gap: 14px; /* Space between grid items */
+    padding: 18px; /* Outer padding */
+}
+
+/* ===========================
+   PANELS / BOXES
+   =========================== */
+.panel {
+    background: #071022; /* Slightly lighter dark panel */
+    padding: 16px; /* Internal spacing */
+    border-radius: 10px; /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.02); /* Soft border */
+}
+
+.panel h2 {
+    margin-top: 0; /* Remove default margin */
+}
+
+/* ===========================
+   EVENT LIST TABLE
+   =========================== */
+.event-list table {
+    width: 100%; /* Full width table */
+    border-collapse: collapse; /* Remove spacing between cells */
+}
+
+.event-list th,
+.event-list td {
+    padding: 8px; /* Cell padding */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03); /* Row separator line */
+}
+
+/* ===========================
+   ANALYTICS ROW
+   =========================== */
+.analytics-row {
+    display: flex; /* Horizontal layout */
+    gap: 12px; /* Space between items */
+    align-items: center; /* Vertically align */
+}
+
+/* ===========================
+   LEADERBOARD LIST
+   =========================== */
+.leaderboard {
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove inner padding */
+    margin: 0; /* Reset margin */
+}
+
+.leaderboard li {
+    padding: 6px; /* Item padding */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03); /* Divider line */
+}
+
+/* ===========================
+   RESPONSIVE (MOBILE)
+   =========================== */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr; /* Convert to single column layout */
+    }
+}
+/* ====================================================== */
+/* GUARANTEED WORKING — NEON FLOATING BUBBLE BACKGROUND   */
+/* ====================================================== */
+
+.neon-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background: #050505; /* fallback */
+}
+
+.neon-bg .bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,255,255,0.5), transparent 70%);
+  animation: floatUp 18s infinite linear;
+  filter: blur(12px);
+  opacity: 0.6;
+}
+
+/* bubble animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.6);
+  }
+  50% {
+    transform: translateY(40vh) scale(1.2);
+  }
+  100% {
+    transform: translateY(-20vh) scale(0.7);
+  }
+}

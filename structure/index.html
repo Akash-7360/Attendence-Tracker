@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI CLUB— Login</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+</div>
+
+  <div class="container">
+    <div class="left">
+      <div class="login-box glass">
+        <img src="images/logo.webp" class="logo" alt="AI CLUB" />
+        <h2>Welcome to AI CLUB</h2>
+
+        <div class="toggle-role">
+          <button id="roleStudent" class="role active">Student</button>
+          <button id="roleAdmin" class="role">Admin</button>
+        </div>
+
+        <div class="form">
+          <input id="nameInput" placeholder="Full name (for register)" type="text" />
+          <input id="emailInput" placeholder="Email" type="email" />
+          <input id="passwordInput" placeholder="Password" type="password" />
+          <div class="actions">
+            <button id="loginBtn" class="btn ">Login</button>
+            <button id="registerBtn" class="btn ">Register</button>
+          </div>
+
+          <p id="status" class="status"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="welcome">
+        <h1 class="neon">AI CLUB</h1>
+        <p class="sub">Created By U.Akash(Me :>)</p>
+        <div class="neon-animation"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase config + app logic -->
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="auth.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

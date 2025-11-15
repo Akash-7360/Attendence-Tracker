@@ -1,0 +1,185 @@
+/* ============================================
+   GLOBAL BASE STYLES
+   ============================================ */
+body {
+    margin: 0;                                         /* Remove default browser margin */
+    background: #05060a;                               /* Dark dashboard background */
+    color: #e8f7ff;                                    /* Light text color */
+    font-family: Inter;                                /* Modern font */
+}
+
+/* ============================================
+   MAIN DASHBOARD LAYOUT
+   ============================================ */
+.dash-container {
+    display: flex;                                     /* Sidebar + main area side-by-side */
+    min-height: 100vh;                                 /* Full viewport height */
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.sidebar {
+    width: 260px;                                      /* Sidebar width */
+    background: linear-gradient(180deg,
+        rgba(255,255,255,0.02),
+        rgba(255,255,255,0.01)
+    );                                                 /* Soft glassy gradient */
+    padding: 18px;
+    border-right: 1px solid rgba(0,255,255,0.04);      /* Subtle neon border line */
+}
+
+/* Profile block inside sidebar */
+.profile {
+    display: flex;
+    gap: 12px;                                         /* Space between avatar and text */
+    align-items: center;                               /* Vertical centering */
+}
+
+.profile img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;                                /* Circular avatar */
+    border: 2px solid rgba(0,240,255,0.06);            /* Neon edge glow */
+}
+
+/* ============================================
+   SIDEBAR BUTTONS
+   ============================================ */
+.side-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    background: transparent;                           /* Transparent by default */
+    color: #bfefff;                                    /* Soft blue text */
+    text-align: left;                                  /* Align text like a menu */
+    cursor: pointer;
+}
+
+/* Hover effect for buttons */
+.side-btn:hover {
+    background: rgba(0,240,255,0.03);                  /* Light neon glow on hover */
+}
+
+/* Logout / delete button */
+.side-btn.danger {
+    color: #ff9b9b;                                    /* Warning red */
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+.main {
+    flex: 1;                                           /* Take remaining width */
+    padding: 22px;
+}
+
+/* Cards / content boxes */
+.card {
+    background: #081018;                               /* Slightly lighter panel */
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255,255,255,0.02);          /* Soft border */
+}
+
+/* Dynamic content blocks */
+#currentEvent {
+    min-height: 140px;                                 /* Space for current event display */
+}
+
+#pageContent {
+    min-height: 360px;                                 /* Main content section size */
+}
+
+/* ============================================
+   BUTTONS INSIDE MAIN AREA
+   ============================================ */
+.btn-action {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Main action (submit / mark) button */
+.btn-mark {
+    background: linear-gradient(90deg, #00f0ff, #8a2be2); /* Neon gradient */
+    color: #041018;                                      /* Dark contrasting text */
+}
+
+/* ============================================
+   TABLE STYLING
+   ============================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;                         /* Remove default cell spacing */
+}
+
+table th,
+table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.03);   /* Light divider line */
+}
+
+/* ============================================
+   FILE INPUT 
+   ============================================ */
+input[type="file"] {
+    color: var(--muted);                                /* Muted text for file selector */
+}
+
+/* ============================================
+   RESPONSIVE (MOBILE VIEW)
+   ============================================ */
+@media (max-width: 800px) {
+    .sidebar {
+        display: none;                                 /* Hide sidebar on small screens */
+    }
+    .main {
+        padding: 10px;                                 /* Reduce padding for mobile */
+    }
+}
+/* ====================================================== */
+/* GUARANTEED WORKING — NEON FLOATING BUBBLE BACKGROUND   */
+/* ====================================================== */
+
+.neon-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background: #050505; /* fallback */
+}
+
+.neon-bg .bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,255,255,0.5), transparent 70%);
+  animation: floatUp 18s infinite linear;
+  filter: blur(12px);
+  opacity: 0.6;
+}
+
+/* bubble animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.6);
+  }
+  50% {
+    transform: translateY(40vh) scale(1.2);
+  }
+  100% {
+    transform: translateY(-20vh) scale(0.7);
+  }
+}
+
